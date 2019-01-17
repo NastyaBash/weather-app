@@ -1,0 +1,231 @@
+:root {
+  --main-color: #5ea3d0;
+  --secondary-color: white;
+  --main-text-color: #7b7c7d;
+  --secondary-text-color: #b0c7d6;
+  --send-message-form: #F5F5F5;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Mukta', sans-serif;
+  font-weight: normal;
+  color: var(--main-text-color); 
+}
+
+input {
+  color: var(--main-text-color);
+  font-family: 'Mukta', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--main-text-color);
+}
+
+#root {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+}
+
+/* Weather */
+.title {
+  box-sizing: border-box;
+  position: relative;
+  padding: 2.2em;
+  background-image: url(weather/after_noon.png);
+  background-position: center;
+  background-size: cover;
+  overflow: auto;
+  height: 100%;
+  width: 49%;
+  float: left;
+  color: white;
+}
+
+.night {
+  background-image: url(weather/night.png);
+}
+
+.location {
+  font-size: 2.4rem;
+}
+
+.location span {
+  display: block;
+  padding-top: .2em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .04em;
+}
+
+.currentTemp {
+  position: absolute;
+  bottom: 2.6rem;
+  font-size: 5.4rem;
+  line-height: 1.4;
+  text-align: right;
+  right: 2.6rem;
+}
+
+.currentTemp b {
+  font-size: 2rem;
+  margin-top: .3em;
+  position: absolute;
+}
+
+.conditions {
+  display: block;
+  font-size: 18px;
+  max-width: 11em;
+}
+
+.weather {
+  overflow: auto;
+  height: 100%;
+  padding: 0 2em;
+}
+
+.weather form {
+  position: relative;
+  margin-top: 2em; 
+}
+
+.weather input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  background: none;
+  padding: .4em 0;
+  width: 100%;
+  transition: all .2s ease;
+}
+
+.weather input:focus {
+  border-color:#adadad;
+}
+
+.clear {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding: .5em;
+}
+
+.clear:before {
+  content: "\2715";
+  line-height: 1;
+  color: var(--main-text-color);
+}
+
+.widget {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 2em 0;
+  font-size: .92em;
+}
+
+.widget__item::before {
+  background: url(weather/weather-icons.png) no-repeat -1.6em -.6em;
+  content: '';
+  width: 44px;
+  height: 42px;
+  display: block;
+  margin: 0 auto .8em;
+  background-size: 38em;
+}
+
+.icon-wind-speed::before {
+  background-position: -8em -0.2em;
+}
+
+.icon-wind-dir::before {
+  background-position: -8.5em -45.5em;
+  background-size: 40em;
+}
+
+.icon-cloud::before {
+  background-position: -1.8em -4.8em;
+}
+
+.week-title {
+  border-bottom: 1px solid #ddd;
+  padding: .4em 0;
+}
+
+.week-title span {
+  border-bottom: 2px solid #796886;
+  padding: .4em;
+}
+
+.week {
+  width: 100%;
+}
+
+.week td {
+  padding: .7em .5em;
+  font-size: .92em;
+  text-align: right;
+  vertical-align: top;
+}
+
+.week td:nth-child(1) {
+  text-align: left;
+}
+
+@media screen and (max-width: 900px) {
+  .weather {
+    height: auto;
+    padding: 1.4em;
+  }
+
+  .weather form {
+    margin-top: 0;
+  }
+
+  .week-title {
+    margin-top: 0;
+  }
+
+  .week td {
+    padding: .7em .3em;
+    min-width: 3em;
+    font-size: .9em;
+  }
+
+  .title {
+    padding: 1.6em;
+    float: none;
+    width: 100%;
+  }
+
+  .location {
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+
+  .location span {
+    padding-top: .77em;
+    font-size: 16px;
+  }
+}
